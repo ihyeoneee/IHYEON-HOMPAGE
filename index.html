@@ -14,6 +14,7 @@
       --primary-light: #eef2ff;
       --primary-dark: #2952cc;
       --accent: #6ee7b7;
+      --accent2: #a78bfa;
       --text: #1e293b;
       --text-light: #64748b;
       --border: #dde3f0;
@@ -24,7 +25,6 @@
     }
 
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Inter', 'Noto Sans KR', sans-serif;
       color: var(--text);
@@ -34,252 +34,185 @@
 
     /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: fixed; top: 0; left: 0; right: 0;
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
-      z-index: 100;
-      padding: 0 2rem;
+      z-index: 100; padding: 0 2rem;
     }
     .nav-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 60px;
+      max-width: 1000px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
     }
-    .nav-logo {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--primary);
-      text-decoration: none;
-    }
+    .nav-logo { font-weight: 700; font-size: 1.1rem; color: var(--primary); text-decoration: none; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
-      text-decoration: none;
-      color: var(--text-light);
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.2s;
+      text-decoration: none; color: var(--text-light);
+      font-size: 0.9rem; font-weight: 500; transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--primary); }
 
     /* ── HERO ── */
     #about {
-      padding: 120px 2rem 80px;
+      padding: 120px 2rem 60px;
       background: var(--hero-grad);
     }
     .about-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      gap: 60px;
-      align-items: flex-start;
+      max-width: 1000px; margin: 0 auto;
+      display: flex; gap: 60px; align-items: flex-start;
     }
     .profile-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
+      width: 180px; height: 180px; border-radius: 50%;
       border: 5px solid var(--white);
       box-shadow: 0 0 0 3px var(--primary), 0 8px 32px rgba(79,126,247,0.18);
-      flex-shrink: 0;
-      background: var(--primary-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-size: 4rem;
+      flex-shrink: 0; background: var(--primary-light);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary); font-size: 4rem; overflow: hidden;
     }
-    .profile-photo img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-    }
+    .profile-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
     .profile-info { flex: 1; }
-    .profile-name-ko {
-      font-size: 1rem;
-      color: var(--text-light);
-      font-weight: 400;
-      margin-bottom: 4px;
-    }
-    .profile-name-en {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-    .profile-title {
-      font-size: 1rem;
-      color: var(--primary);
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-    .profile-institution {
-      font-size: 0.95rem;
-      color: var(--text-light);
-      margin-bottom: 16px;
-    }
+    .profile-name-ko { font-size: 1rem; color: var(--text-light); font-weight: 400; margin-bottom: 4px; }
+    .profile-name-en { font-size: 2.2rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .profile-title { font-size: 1rem; color: var(--primary); font-weight: 600; margin-bottom: 4px; }
+    .profile-institution { font-size: 0.95rem; color: var(--text-light); margin-bottom: 16px; }
     .profile-email {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--text-light);
-      font-size: 0.9rem;
-      text-decoration: none;
-      margin-bottom: 20px;
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--text-light); font-size: 0.9rem; text-decoration: none; margin-bottom: 20px;
     }
     .profile-email:hover { color: var(--primary); }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .tag {
-      background: var(--primary-light);
-      color: var(--primary-dark);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 500;
+      background: var(--primary-light); color: var(--primary-dark);
+      padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;
     }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: flex; justify-content: center; gap: 0;
+    }
+    .stat-item {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 24px 40px; border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number { font-size: 2rem; font-weight: 700; color: var(--primary); line-height: 1; }
+    .stat-label { font-size: 0.8rem; color: var(--text-light); margin-top: 4px; }
 
     /* ── SECTION BASE ── */
     section { padding: 80px 2rem; }
     section:nth-child(even) { background: var(--white); }
     .section-inner { max-width: 1000px; margin: 0 auto; }
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
+    .section-title { font-size: 1.6rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
     .section-divider {
-      width: 48px;
-      height: 4px;
+      width: 48px; height: 4px;
       background: linear-gradient(90deg, var(--primary), var(--accent));
-      border-radius: 2px;
-      margin-bottom: 40px;
+      border-radius: 2px; margin-bottom: 40px;
     }
 
     /* ── RESEARCH ── */
     .research-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
     }
     .research-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-      transition: box-shadow 0.2s, transform 0.2s;
-      box-shadow: var(--card-shadow);
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px;
+      transition: box-shadow 0.2s, transform 0.2s; box-shadow: var(--card-shadow);
     }
     .research-card:hover {
-      box-shadow: 0 8px 32px rgba(79,126,247,0.18);
-      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(79,126,247,0.18); transform: translateY(-4px);
     }
     .research-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--primary-light);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-size: 1.3rem;
-      margin-bottom: 16px;
+      width: 48px; height: 48px; background: var(--primary-light);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      color: var(--primary); font-size: 1.3rem; margin-bottom: 16px;
     }
-    .research-card h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .research-card p {
-      font-size: 0.88rem;
-      color: var(--text-light);
-      line-height: 1.7;
-    }
+    .research-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+    .research-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; }
 
     /* ── PUBLICATIONS ── */
-    .pub-list { display: flex; flex-direction: column; gap: 16px; }
+    .pub-tabs { display: flex; gap: 8px; margin-bottom: 28px; }
+    .pub-tab {
+      padding: 6px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;
+      border: 1.5px solid var(--border); background: var(--white); color: var(--text-light);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .pub-tab.active {
+      background: var(--primary); border-color: var(--primary); color: var(--white);
+    }
+    .pub-list { display: flex; flex-direction: column; gap: 14px; }
     .pub-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 5px solid var(--primary);
-      border-radius: 0 12px 12px 0;
-      padding: 20px 24px;
-      transition: box-shadow 0.2s;
-      box-shadow: var(--card-shadow);
+      background: var(--white); border: 1px solid var(--border);
+      border-left: 5px solid var(--primary); border-radius: 0 12px 12px 0;
+      padding: 18px 24px; transition: box-shadow 0.2s; box-shadow: var(--card-shadow);
     }
+    .pub-item.conference { border-left-color: var(--accent2); }
     .pub-item:hover { box-shadow: 0 6px 24px rgba(79,126,247,0.15); }
+    .pub-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
     .pub-year {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 4px;
+      font-size: 0.78rem; font-weight: 700; color: var(--white);
+      background: var(--primary); padding: 2px 8px; border-radius: 10px;
     }
-    .pub-title {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text);
-      margin-bottom: 4px;
-      line-height: 1.5;
+    .pub-item.conference .pub-year { background: var(--accent2); }
+    .pub-badge {
+      font-size: 0.72rem; font-weight: 600; color: var(--primary);
+      background: var(--primary-light); padding: 2px 8px; border-radius: 10px;
     }
-    .pub-journal {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      font-style: italic;
-    }
-    .pub-placeholder {
-      text-align: center;
-      padding: 40px;
-      color: var(--text-light);
-      font-size: 0.9rem;
-      background: var(--white);
-      border: 2px dashed var(--border);
-      border-radius: 12px;
-    }
+    .pub-title { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.5; }
+    .pub-authors { font-size: 0.82rem; color: var(--text-light); margin-bottom: 2px; }
+    .pub-journal { font-size: 0.82rem; color: var(--text-light); font-style: italic; }
 
     /* ── CV ── */
+    .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
     .cv-section { margin-bottom: 40px; }
     .cv-section-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-size: 1rem; font-weight: 700; color: var(--primary);
+      margin-bottom: 20px; display: flex; align-items: center; gap: 8px;
+      padding-bottom: 10px; border-bottom: 2px solid var(--primary-light);
     }
-    .cv-items { display: flex; flex-direction: column; gap: 16px; }
-    .cv-item { display: flex; gap: 20px; align-items: flex-start; }
+    .cv-items { display: flex; flex-direction: column; gap: 20px; }
+    .cv-item { display: flex; gap: 16px; align-items: flex-start; }
     .cv-year {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      font-weight: 500;
-      min-width: 80px;
-      padding-top: 2px;
+      font-size: 0.8rem; color: var(--text-light); font-weight: 500;
+      min-width: 90px; padding-top: 3px; line-height: 1.4;
     }
-    .cv-content h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 2px;
+    .cv-content h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+    .cv-content p { font-size: 0.83rem; color: var(--text-light); line-height: 1.5; }
+    .cv-content .thesis {
+      font-size: 0.8rem; color: var(--text-light); font-style: italic;
+      margin-top: 4px; line-height: 1.5;
     }
-    .cv-content p {
-      font-size: 0.85rem;
-      color: var(--text-light);
+    .badge-cum {
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      background: #fef3c7; color: #92400e;
+      padding: 1px 8px; border-radius: 8px; margin-left: 6px;
     }
+
+    /* ── CERTIFICATIONS ── */
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .cert-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px; box-shadow: var(--card-shadow);
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .cert-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary-light), #f5f0ff);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary); font-size: 1.2rem; flex-shrink: 0;
+    }
+    .cert-card h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 3px; }
+    .cert-card p { font-size: 0.8rem; color: var(--text-light); }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--text);
-      color: #94a3b8;
-      text-align: center;
-      padding: 30px 2rem;
-      font-size: 0.85rem;
+      background: var(--text); color: #94a3b8;
+      text-align: center; padding: 30px 2rem; font-size: 0.85rem;
     }
     footer a { color: var(--primary); text-decoration: none; }
 
@@ -289,6 +222,9 @@
       .tags { justify-content: center; }
       .nav-links { gap: 1rem; }
       .profile-name-en { font-size: 1.6rem; }
+      .stats-inner { flex-wrap: wrap; }
+      .stat-item { padding: 16px 24px; }
+      .cv-grid { grid-template-columns: 1fr; gap: 0; }
     }
   </style>
 </head>
@@ -301,7 +237,7 @@
       <ul class="nav-links">
         <li><a href="#about">소개</a></li>
         <li><a href="#research">연구</a></li>
-        <li><a href="#publications">학술업적</a></li>
+        <li><a href="#publications">논문</a></li>
         <li><a href="#cv">이력</a></li>
       </ul>
     </div>
@@ -310,13 +246,13 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="about-inner">
-      <div class="profile-photo" id="photoContainer">
+      <div class="profile-photo">
         <img src="도혜 프로필사진.jpg" alt="Ihyeon Yoon">
       </div>
       <div class="profile-info">
         <p class="profile-name-ko">윤이현</p>
         <h1 class="profile-name-en">Ihyeon Yoon</h1>
-        <p class="profile-title">Research Fellow</p>
+        <p class="profile-title">Research Fellow · Postdoctoral Researcher</p>
         <p class="profile-institution">Institute of Educational Research, Chonnam National University</p>
         <a class="profile-email" href="mailto:dohyeyoon@jnu.ac.kr">
           <i class="fa-regular fa-envelope"></i>
@@ -326,6 +262,7 @@
           <span class="tag">성인교육</span>
           <span class="tag">노인교육</span>
           <span class="tag">학습자분석</span>
+          <span class="tag">평생교육</span>
           <span class="tag">Adult Education</span>
           <span class="tag">Gerontological Education</span>
           <span class="tag">Learning Analytics</span>
@@ -334,26 +271,48 @@
     </div>
   </section>
 
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-number">8</span>
+        <span class="stat-label">학술지 논문</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">1</span>
+        <span class="stat-label">학술대회 발표</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">5</span>
+        <span class="stat-label">담당 교과목</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">2</span>
+        <span class="stat-label">자격증</span>
+      </div>
+    </div>
+  </div>
+
   <!-- RESEARCH -->
   <section id="research">
     <div class="section-inner">
-      <h2 class="section-title">연구업적</h2>
+      <h2 class="section-title">연구분야</h2>
       <div class="section-divider"></div>
       <div class="research-grid">
         <div class="research-card">
           <div class="research-icon"><i class="fa-solid fa-person-cane"></i></div>
           <h3>노인교육 (Gerontological Education)</h3>
-          <p>고령화 사회에서 노인 학습자의 교육 참여와 학습 경험에 관한 연구를 수행합니다.</p>
+          <p>고령화 사회에서 노인 학습자의 교육 참여와 학습 경험에 관한 연구를 수행합니다. 세대적 관점에서 노인의 학습 아비투스를 탐구합니다.</p>
         </div>
         <div class="research-card">
           <div class="research-icon"><i class="fa-solid fa-graduation-cap"></i></div>
           <h3>성인교육 (Adult Education)</h3>
-          <p>성인 학습자의 평생학습 참여 동기, 장벽, 학습 효과성에 관한 연구를 수행합니다.</p>
+          <p>성인 학습자의 평생학습 참여 동기, 무형식학습 프로세스, 학습 효과성에 관한 연구를 수행합니다.</p>
         </div>
         <div class="research-card">
           <div class="research-icon"><i class="fa-solid fa-chart-line"></i></div>
           <h3>학습자분석 (Learning Analytics)</h3>
-          <p>데이터 기반 학습자 분석을 통해 교육 효과를 향상시키는 방법을 연구합니다.</p>
+          <p>데이터 기반 학습자 분석을 통해 교육 효과를 향상시키는 방법을 연구하며, AI 융합교육 분야를 탐구합니다.</p>
         </div>
       </div>
     </div>
@@ -362,13 +321,100 @@
   <!-- PUBLICATIONS -->
   <section id="publications">
     <div class="section-inner">
-      <h2 class="section-title">학술업적</h2>
+      <h2 class="section-title">논문</h2>
       <div class="section-divider"></div>
       <div class="pub-list">
-        <div class="pub-placeholder">
-          <i class="fa-solid fa-book-open" style="font-size:2rem; margin-bottom:12px; display:block;"></i>
-          논문 및 학술 발표 정보를 입력해주시면 여기에 표시됩니다.
+
+        <div class="pub-item">
+          <div class="pub-meta">
+            <span class="pub-year">2026</span>
+            <span class="pub-badge">KCI</span>
+          </div>
+          <p class="pub-title">문화예술교육에서의 AI 활용 교육에 대한 체계적 문헌고찰</p>
+          <p class="pub-authors">김경미, 윤도혜</p>
+          <p class="pub-journal">교육연구</p>
         </div>
+
+        <div class="pub-item">
+          <div class="pub-meta">
+            <span class="pub-year">2025</span>
+            <span class="pub-badge">KCI</span>
+          </div>
+          <p class="pub-title">형식과 성찰 사이에서</p>
+          <p class="pub-authors">윤도혜, 강구섭</p>
+          <p class="pub-journal">교육연구</p>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-meta">
+            <span class="pub-year">2024</span>
+            <span class="pub-badge">KCI</span>
+          </div>
+          <p class="pub-title">성인학습자의 무형식학습 프로세스에 영향을 미치는 요인들에 대한 연구</p>
+          <p class="pub-authors">윤도혜</p>
+          <p class="pub-journal">교육의 이론과 실천</p>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-meta">
+            <span class="pub-year">2022</span>
+            <span class="pub-badge">KCI</span>
+          </div>
+          <p class="pub-title">평생학습관점에서의 다도 '체험'의 의미 연구</p>
+          <p class="pub-authors">윤도혜, 김종희</p>
+          <p class="pub-journal">차문화·산업학</p>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-meta">
+            <span class="pub-year">2020</span>
+            <span class="pub-badge">KCI</span>
+          </div>
+          <p class="pub-title">평생교육관점에서의 온라인 다도참여에 대한 연구</p>
+          <p class="pub-authors">윤도혜, 김종희</p>
+          <p class="pub-journal">차문화·산업학</p>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-meta">
+            <span class="pub-year">2019</span>
+            <span class="pub-badge">KCI</span>
+          </div>
+          <p class="pub-title">Karl Mannheim의 세대이론에 대한 비판적 탐구와 성인교육적 함의</p>
+          <p class="pub-authors">이병준, 위미나, 윤도혜</p>
+          <p class="pub-journal">성인계속교육연구</p>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-meta">
+            <span class="pub-year">2017</span>
+            <span class="pub-badge">KCI</span>
+          </div>
+          <p class="pub-title">베이비부머 세대 비자발적 조기퇴직자들의 일상학습 연구</p>
+          <p class="pub-authors">윤도혜, 이병준</p>
+          <p class="pub-journal">성인계속교육연구</p>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-meta">
+            <span class="pub-year">2017</span>
+            <span class="pub-badge">KCI</span>
+          </div>
+          <p class="pub-title">시니어클럽 중간관리자의 학습경험 분석</p>
+          <p class="pub-authors">윤도혜, 이병준</p>
+          <p class="pub-journal">성인계속교육연구</p>
+        </div>
+
+        <div class="pub-item conference">
+          <div class="pub-meta">
+            <span class="pub-year">2019</span>
+            <span class="pub-badge" style="color:var(--accent2);background:#f5f3ff;">학술대회</span>
+          </div>
+          <p class="pub-title">만하임의 세대이론에 대한 비판적 탐구</p>
+          <p class="pub-authors">위미나, 윤도혜, 이병준</p>
+          <p class="pub-journal">한독교육학회 학술대회 자료집</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -379,27 +425,115 @@
       <h2 class="section-title">이력</h2>
       <div class="section-divider"></div>
 
-      <div class="cv-section">
-        <p class="cv-section-title"><i class="fa-solid fa-briefcase"></i> 경력</p>
-        <div class="cv-items">
-          <div class="cv-item">
-            <span class="cv-year">현재</span>
-            <div class="cv-content">
-              <h4>Research Fellow</h4>
-              <p>Institute of Educational Research, Chonnam National University</p>
+      <div class="cv-grid">
+        <div>
+          <!-- 학력 -->
+          <div class="cv-section">
+            <p class="cv-section-title"><i class="fa-solid fa-user-graduate"></i> 학력</p>
+            <div class="cv-items">
+
+              <div class="cv-item">
+                <span class="cv-year">2019.05 –<br>2023.10</span>
+                <div class="cv-content">
+                  <h4>박사 (Dr. rer. soc.) <span class="badge-cum">cum laude</span></h4>
+                  <p>Eberhard Karls Universität Tübingen, 독일</p>
+                  <p>사회과학부 · 교육학(평생교육학)</p>
+                  <p class="thesis">"Learning Habitus of Older Adults From a Generational Perspective of Lifelong Education: A Focus on the Liberation and Korean War Generation in Korea and Germany"</p>
+                </div>
+              </div>
+
+              <div class="cv-item">
+                <span class="cv-year">2016.03 –<br>2018.02</span>
+                <div class="cv-content">
+                  <h4>교육학석사</h4>
+                  <p>부산대학교 대학원</p>
+                  <p>교육학과</p>
+                </div>
+              </div>
+
+              <div class="cv-item">
+                <span class="cv-year">2012.03 –<br>2016.02</span>
+                <div class="cv-content">
+                  <h4>문학사</h4>
+                  <p>동아대학교 인문과학대학</p>
+                  <p>교육학과</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <!-- 경력 -->
+          <div class="cv-section">
+            <p class="cv-section-title"><i class="fa-solid fa-briefcase"></i> 경력</p>
+            <div class="cv-items">
+
+              <div class="cv-item">
+                <span class="cv-year">2025.10 –<br>현재</span>
+                <div class="cv-content">
+                  <h4>박사후연구원</h4>
+                  <p>전남대학교 교육문제연구소</p>
+                </div>
+              </div>
+
+              <div class="cv-item">
+                <span class="cv-year">2025.03 –<br>현재</span>
+                <div class="cv-content">
+                  <h4>강사</h4>
+                  <p>전남대학교 교육학과 (AI융합교육전공)</p>
+                </div>
+              </div>
+
+              <div class="cv-item">
+                <span class="cv-year">2025.09 –<br>2025.09</span>
+                <div class="cv-content">
+                  <h4>박사후연구원</h4>
+                  <p>전남대학교 BK21사업단</p>
+                  <p>미래교육을위한플로리싱전문가양성사업단</p>
+                </div>
+              </div>
+
+              <div class="cv-item">
+                <span class="cv-year">2024.03 –<br>2024.08</span>
+                <div class="cv-content">
+                  <h4>박사후연구원 · 강사</h4>
+                  <p>전남대학교 교육문제연구소</p>
+                  <p>부산대학교 (평생교육프로그램개발론)</p>
+                </div>
+              </div>
+
+              <div class="cv-item">
+                <span class="cv-year">2023.10 –<br>2023.12</span>
+                <div class="cv-content">
+                  <h4>연구원</h4>
+                  <p>Universität Tübingen</p>
+                  <p>Asien-Orient-Institut (Sinologie)</p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
 
+      <!-- 자격증 -->
       <div class="cv-section">
-        <p class="cv-section-title"><i class="fa-solid fa-user-graduate"></i> 학력</p>
-        <div class="cv-items">
-          <div class="cv-item">
-            <span class="cv-year">-</span>
-            <div class="cv-content">
-              <h4>학력 정보를 입력해주세요</h4>
-              <p>학교명, 전공, 졸업연도</p>
+        <p class="cv-section-title"><i class="fa-solid fa-certificate"></i> 자격증</p>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fa-solid fa-school"></i></div>
+            <div>
+              <h4>중등학교 정교사 (2급)</h4>
+              <p>교육학 · 2016.02 · 교육부장관</p>
+            </div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+            <div>
+              <h4>평생교육사 2급</h4>
+              <p>2016.02 · 교육부장관</p>
             </div>
           </div>
         </div>
@@ -410,7 +544,8 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Ihyeon Yoon · <a href="mailto:dohyeyoon@jnu.ac.kr">dohyeyoon@jnu.ac.kr</a></p>
+    <p>© 2026 Ihyeon Yoon · <a href="mailto:dohyeyoon@jnu.ac.kr">dohyeyoon@jnu.ac.kr</a></p>
+    <p style="margin-top:6px; font-size:0.8rem;">Institute of Educational Research, Chonnam National University</p>
   </footer>
 
 </body>
