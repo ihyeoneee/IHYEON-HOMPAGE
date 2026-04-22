@@ -53,10 +53,7 @@
     .nav-links a:hover { color: var(--primary); }
 
     /* ── HERO ── */
-    #about {
-      padding: 120px 2rem 60px;
-      background: var(--hero-grad);
-    }
+    #about { padding: 120px 2rem 60px; background: var(--hero-grad); }
     .about-inner {
       max-width: 1000px; margin: 0 auto;
       display: flex; gap: 60px; align-items: flex-start;
@@ -74,7 +71,7 @@
     .profile-name-ko { font-size: 1rem; color: var(--text-light); font-weight: 400; margin-bottom: 4px; }
     .profile-name-en { font-size: 2.2rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
     .profile-title { font-size: 1rem; color: var(--primary); font-weight: 600; margin-bottom: 4px; }
-    .profile-institution { font-size: 0.95rem; color: var(--text-light); margin-bottom: 16px; line-height: 1.6; }
+    .profile-institution { font-size: 0.95rem; color: var(--text-light); margin-bottom: 16px; line-height: 1.7; }
     .profile-email {
       display: inline-flex; align-items: center; gap: 6px;
       color: var(--text-light); font-size: 0.9rem; text-decoration: none; margin-bottom: 20px;
@@ -94,7 +91,7 @@
     }
     .stats-inner {
       max-width: 1000px; margin: 0 auto;
-      display: flex; justify-content: center; gap: 0;
+      display: flex; justify-content: center;
     }
     .stat-item {
       display: flex; flex-direction: column; align-items: center;
@@ -124,9 +121,7 @@
       border-radius: 16px; padding: 28px;
       transition: box-shadow 0.2s, transform 0.2s; box-shadow: var(--card-shadow);
     }
-    .research-card:hover {
-      box-shadow: 0 8px 32px rgba(79,126,247,0.18); transform: translateY(-4px);
-    }
+    .research-card:hover { box-shadow: 0 8px 32px rgba(79,126,247,0.18); transform: translateY(-4px); }
     .research-icon {
       width: 48px; height: 48px; background: var(--primary-light);
       border-radius: 10px; display: flex; align-items: center; justify-content: center;
@@ -149,7 +144,7 @@
       background: var(--primary); padding: 2px 8px; border-radius: 10px;
     }
     .pub-badge {
-      font-size: 0.72rem; font-weight: 600; color: var(--primary);
+      font-size: 0.72rem; font-weight: 700; color: var(--primary);
       background: var(--primary-light); padding: 2px 8px; border-radius: 10px;
     }
     .pub-title { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.5; }
@@ -172,19 +167,23 @@
     }
     .cv-content h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 3px; }
     .cv-content p { font-size: 0.83rem; color: var(--text-light); line-height: 1.5; }
-    .cv-content .thesis {
-      font-size: 0.8rem; color: var(--text-light); font-style: italic;
-      margin-top: 4px; line-height: 1.5;
+
+    /* PhD entry styling */
+    .phd-uni { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+    .phd-dept { font-size: 0.83rem; color: var(--primary); font-weight: 500; margin-bottom: 10px; }
+    .phd-thesis {
+      background: var(--primary-light);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      font-size: 0.82rem; color: var(--text); font-style: italic;
+      line-height: 1.6; margin-top: 8px;
     }
-    .badge-cum {
-      display: inline-block; font-size: 0.72rem; font-weight: 600;
-      background: #fef3c7; color: #92400e;
-      padding: 1px 8px; border-radius: 8px; margin-left: 6px;
-    }
+
     .cv-sub-label {
-      font-size: 0.78rem; font-weight: 700; color: var(--primary);
-      text-transform: uppercase; letter-spacing: 0.05em;
-      margin-bottom: 14px; margin-top: 24px;
+      font-size: 0.75rem; font-weight: 700; color: var(--primary);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 14px; margin-top: 28px;
     }
     .cv-sub-label:first-child { margin-top: 0; }
 
@@ -323,10 +322,10 @@
         <div class="pub-item">
           <div class="pub-meta">
             <span class="pub-year">2026</span>
-            <span class="pub-badge" style="color:#1d4ed8;background:#dbeafe;">International</span>
+            <span class="pub-badge" style="color:#065f46;background:#d1fae5;">SCOPUS</span>
           </div>
           <p class="pub-title">What AI–digital competencies should teachers develop throughout their careers?: Designing a career-responsive framework through a Delphi study</p>
-          <p class="pub-authors">Yoon, I., Ryu, J., Kim, G., & Kim, I.</p>
+          <p class="pub-authors">Ihyeon Yoon, Jiheon Ryu, Gukhyeon Kim, & Inki Kim</p>
           <p class="pub-journal">Frontiers in Education</p>
         </div>
 
@@ -335,9 +334,9 @@
             <span class="pub-year">2026</span>
             <span class="pub-badge">KCI</span>
           </div>
-          <p class="pub-title">문화예술교육에서의 AI 활용 교육에 대한 체계적 문헌고찰</p>
-          <p class="pub-authors">Kim, K., & Yoon, I.</p>
-          <p class="pub-journal">교육연구 (Journal of Educational Research)</p>
+          <p class="pub-title">A Systematic Review of AI-Integrated Education in Arts and Culture Education</p>
+          <p class="pub-authors">Gyeongmi Kim, & Ihyeon Yoon</p>
+          <p class="pub-journal">Journal of Educational Research</p>
         </div>
 
         <div class="pub-item">
@@ -345,9 +344,9 @@
             <span class="pub-year">2025</span>
             <span class="pub-badge">KCI</span>
           </div>
-          <p class="pub-title">형식과 성찰 사이에서: 예비교원의 교육기부활동 경험을 통한 교직관 형성 탐색</p>
-          <p class="pub-authors">Yoon, D., & Kang, G.</p>
-          <p class="pub-journal">교육연구 (Journal of Educational Research)</p>
+          <p class="pub-title">Exploring the Formation of Teacher Identity through Pre-service Teachers' Educational Volunteering Experiences</p>
+          <p class="pub-authors">Dohye Yoon, & Guseop Kang</p>
+          <p class="pub-journal">Journal of Educational Research</p>
         </div>
 
         <div class="pub-item">
@@ -355,9 +354,9 @@
             <span class="pub-year">2025</span>
             <span class="pub-badge">KCI</span>
           </div>
-          <p class="pub-title">교직생애주기 기반 AI·디지털 수업역량지표 개발 및 타당화 연구</p>
-          <p class="pub-authors">Ryu, J., Kim, G., & Yoon, I.</p>
-          <p class="pub-journal">한국교육학연구 (Korean Journal of Educational Research)</p>
+          <p class="pub-title">Development and Validation of AI·Digital Teaching Competency Indicators Based on Teacher Career Life Cycle</p>
+          <p class="pub-authors">Jiheon Ryu, Gukhyeon Kim, & Ihyeon Yoon</p>
+          <p class="pub-journal">Korean Journal of Educational Research</p>
         </div>
 
         <div class="pub-item">
@@ -365,9 +364,9 @@
             <span class="pub-year">2024</span>
             <span class="pub-badge">KCI</span>
           </div>
-          <p class="pub-title">성인학습자의 무형식학습 프로세스에 영향을 미치는 요인들에 대한 연구: 휴리스틱 모델을 중심으로</p>
-          <p class="pub-authors">Yoon, D.</p>
-          <p class="pub-journal">교육의 이론과 실천 (Theory and Practice of Education)</p>
+          <p class="pub-title">A Study on Factors Influencing the Informal Learning Process of Adult Learners: Focusing on the Heuristic Model</p>
+          <p class="pub-authors">Dohye Yoon</p>
+          <p class="pub-journal">Theory and Practice of Education</p>
         </div>
 
         <div class="pub-item">
@@ -376,17 +375,17 @@
             <span class="pub-badge" style="color:#065f46;background:#d1fae5;">SCOPUS</span>
           </div>
           <p class="pub-title">Cultural Capital and the Transnational Mobility of Asian Middle-Class Students to Germany</p>
-          <p class="pub-authors">Yoon, D. et al.</p>
+          <p class="pub-authors">Dohye Yoon et al.</p>
           <p class="pub-journal">SAGE Open</p>
         </div>
 
         <div class="pub-item">
           <div class="pub-meta">
             <span class="pub-year">2023</span>
-            <span class="pub-badge" style="color:#1d4ed8;background:#dbeafe;">International</span>
+            <span class="pub-badge" style="color:#7c3aed;background:#ede9fe;">SSCI</span>
           </div>
           <p class="pub-title">Paradigm model of online learning experience during COVID-19 crisis in higher education</p>
-          <p class="pub-authors">Yoon, D. et al.</p>
+          <p class="pub-authors">Dohye Yoon et al.</p>
           <p class="pub-journal">Frontiers in Education</p>
         </div>
 
@@ -395,9 +394,9 @@
             <span class="pub-year">2022</span>
             <span class="pub-badge">KCI</span>
           </div>
-          <p class="pub-title">평생학습관점에서의 다도 '체험'의 의미 연구</p>
-          <p class="pub-authors">Yoon, D., & Kim, J.</p>
-          <p class="pub-journal">차문화산업학 (Journal of Tea Culture and Industry)</p>
+          <p class="pub-title">Meaning of Tea Ceremony 'Experience' from the Perspective of Lifelong Learning</p>
+          <p class="pub-authors">Dohye Yoon, & Jonghee Kim</p>
+          <p class="pub-journal">Journal of Tea Culture and Industry</p>
         </div>
 
         <div class="pub-item">
@@ -405,9 +404,9 @@
             <span class="pub-year">2020</span>
             <span class="pub-badge">KCI</span>
           </div>
-          <p class="pub-title">평생교육관점에서의 온라인 다도참여에 대한 연구</p>
-          <p class="pub-authors">Yoon, D., & Kim, J.</p>
-          <p class="pub-journal">차문화산업학 (Journal of Tea Culture and Industry)</p>
+          <p class="pub-title">A Study on Participation of Online Tea Ceremony from the Perspective of Lifelong Education</p>
+          <p class="pub-authors">Dohye Yoon, & Jonghee Kim</p>
+          <p class="pub-journal">Journal of Tea Culture and Industry</p>
         </div>
 
         <div class="pub-item">
@@ -415,9 +414,9 @@
             <span class="pub-year">2019</span>
             <span class="pub-badge">KCI</span>
           </div>
-          <p class="pub-title">Karl Mannheim의 세대이론에 대한 비판적 탐구와 성인교육적 함의</p>
-          <p class="pub-authors">Lee, B., Wi, M., & Yoon, D.</p>
-          <p class="pub-journal">성인계속교육연구 (Journal of Adult and Continuing Education)</p>
+          <p class="pub-title">A Critical Inquiry into Karl Mannheim's Generation Theory and Its Implications for Adult Education</p>
+          <p class="pub-authors">Byungjun Lee, Mina Wi, & Dohye Yoon</p>
+          <p class="pub-journal">Journal of Adult and Continuing Education</p>
         </div>
 
         <div class="pub-item">
@@ -425,9 +424,9 @@
             <span class="pub-year">2017</span>
             <span class="pub-badge">KCI</span>
           </div>
-          <p class="pub-title">베이비부머 세대 비자발적 조기퇴직자들의 일상학습 연구: 해운산업 퇴직자를 중심으로</p>
-          <p class="pub-authors">Yoon, D., & Lee, B.</p>
-          <p class="pub-journal">성인계속교육연구 (Journal of Adult and Continuing Education)</p>
+          <p class="pub-title">A Study on the Daily Learning of Involuntary Early Retirees of the Baby Boomer Generation: Focusing on Retirees in the Shipping Industry</p>
+          <p class="pub-authors">Dohye Yoon, & Byungjun Lee</p>
+          <p class="pub-journal">Journal of Adult and Continuing Education</p>
         </div>
 
       </div>
@@ -449,10 +448,12 @@
               <div class="cv-item">
                 <span class="cv-year">2019.05 –<br>2023.10</span>
                 <div class="cv-content">
-                  <h4>Ph.D. in Social Sciences (Dr. rer. soc.) <span class="badge-cum">cum laude</span></h4>
-                  <p>Eberhard Karls Universität Tübingen, Germany</p>
-                  <p>Faculty of Economics and Social Sciences · Lifelong Education</p>
-                  <p class="thesis">"Learning Habitus of Older Adults From a Generational Perspective of Lifelong Education: A Focus on the Liberation and Korean War Generation in Korea and Germany"</p>
+                  <h4>Ph.D. in Social Sciences (Dr. rer. soc.)</h4>
+                  <p class="phd-uni">Eberhard Karls Universität Tübingen, Germany</p>
+                  <p class="phd-dept">Faculty of Economics and Social Sciences · Lifelong Education</p>
+                  <div class="phd-thesis">
+                    "Learning Habitus of Older Adults From a Generational Perspective of Lifelong Education: A Focus on the Liberation and Korean War Generation in Korea and Germany"
+                  </div>
                 </div>
               </div>
             </div>
@@ -481,7 +482,7 @@
         </div>
 
         <div>
-          <!-- Career -->
+          <!-- Experience -->
           <div class="cv-section">
             <p class="cv-section-title"><i class="fa-solid fa-briefcase"></i> Experience</p>
 
@@ -490,16 +491,14 @@
               <div class="cv-item">
                 <span class="cv-year">2025.10 –<br>Present</span>
                 <div class="cv-content">
-                  <h4>Postdoctoral Researcher</h4>
-                  <p>Institute of Educational Research</p>
+                  <h4>Research Fellow</h4>
                   <p>Chonnam National University</p>
                 </div>
               </div>
               <div class="cv-item">
-                <span class="cv-year">2025.09</span>
+                <span class="cv-year">2024.09 –<br>2025.09</span>
                 <div class="cv-content">
                   <h4>Postdoctoral Researcher</h4>
-                  <p>BK21 Program for Flourishing Education Specialists</p>
                   <p>Chonnam National University</p>
                 </div>
               </div>
@@ -507,7 +506,6 @@
                 <span class="cv-year">2024.03 –<br>2024.08</span>
                 <div class="cv-content">
                   <h4>Postdoctoral Researcher</h4>
-                  <p>Institute of Educational Research</p>
                   <p>Chonnam National University</p>
                 </div>
               </div>
@@ -515,7 +513,6 @@
                 <span class="cv-year">2023.10 –<br>2023.12</span>
                 <div class="cv-content">
                   <h4>Research Associate</h4>
-                  <p>Asien-Orient-Institut (Sinologie)</p>
                   <p>Universität Tübingen, Germany</p>
                 </div>
               </div>
@@ -527,15 +524,13 @@
                 <span class="cv-year">2025.03 –<br>Present</span>
                 <div class="cv-content">
                   <h4>Instructor</h4>
-                  <p>Dept. of Education (AI-Integrated Education)</p>
                   <p>Chonnam National University</p>
                 </div>
               </div>
               <div class="cv-item">
-                <span class="cv-year">2024.03 –<br>2024.06</span>
+                <span class="cv-year">2024.03 –<br>2026.02</span>
                 <div class="cv-content">
                   <h4>Instructor</h4>
-                  <p>Lifelong Education Program Development</p>
                   <p>Pusan National University</p>
                 </div>
               </div>
