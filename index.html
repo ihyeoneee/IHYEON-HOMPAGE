@@ -2,9 +2,410 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>이현 홈페이지</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ihyeon Yoon | 윤이현</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #3b82f6;
+      --primary-light: #eff6ff;
+      --primary-dark: #1d4ed8;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Noto Sans KR', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    /* ── HERO ── */
+    #about {
+      padding: 120px 2rem 80px;
+      background: var(--white);
+    }
+    .about-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      gap: 60px;
+      align-items: flex-start;
+    }
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary-light);
+      flex-shrink: 0;
+      background: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 4rem;
+    }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .profile-info { flex: 1; }
+    .profile-name-ko {
+      font-size: 1rem;
+      color: var(--text-light);
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+    .profile-name-en {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .profile-title {
+      font-size: 1rem;
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .profile-institution {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+    .profile-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+    .profile-email:hover { color: var(--primary); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 80px 2rem; }
+    section:nth-child(even) { background: var(--white); }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .section-divider {
+      width: 40px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+      margin-bottom: 40px;
+    }
+
+    /* ── RESEARCH ── */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .research-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .research-card:hover {
+      box-shadow: 0 8px 30px rgba(59,130,246,0.1);
+      transform: translateY(-2px);
+    }
+    .research-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--primary-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+    .research-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .research-card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-list { display: flex; flex-direction: column; gap: 16px; }
+    .pub-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      transition: box-shadow 0.2s;
+    }
+    .pub-item:hover { box-shadow: 0 4px 20px rgba(59,130,246,0.08); }
+    .pub-year {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .pub-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+    .pub-journal {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+    .pub-placeholder {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      background: var(--white);
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+    }
+
+    /* ── CV ── */
+    .cv-section { margin-bottom: 40px; }
+    .cv-section-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cv-items { display: flex; flex-direction: column; gap: 16px; }
+    .cv-item { display: flex; gap: 20px; align-items: flex-start; }
+    .cv-year {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-weight: 500;
+      min-width: 80px;
+      padding-top: 2px;
+    }
+    .cv-content h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .cv-content p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text);
+      color: #94a3b8;
+      text-align: center;
+      padding: 30px 2rem;
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .about-inner { flex-direction: column; align-items: center; text-align: center; }
+      .tags { justify-content: center; }
+      .nav-links { gap: 1rem; }
+      .profile-name-en { font-size: 1.6rem; }
+    }
+  </style>
 </head>
 <body>
-  <h1>안녕하세요, 이현입니다!</h1>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="#about">Ihyeon Yoon</a>
+      <ul class="nav-links">
+        <li><a href="#about">소개</a></li>
+        <li><a href="#research">연구</a></li>
+        <li><a href="#publications">학술업적</a></li>
+        <li><a href="#cv">이력</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-inner">
+      <div class="profile-photo" id="photoContainer">
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <div class="profile-info">
+        <p class="profile-name-ko">윤이현</p>
+        <h1 class="profile-name-en">Ihyeon Yoon</h1>
+        <p class="profile-title">Research Fellow</p>
+        <p class="profile-institution">Institute of Educational Research, Chonnam National University</p>
+        <a class="profile-email" href="mailto:dohyeyoon@jnu.ac.kr">
+          <i class="fa-regular fa-envelope"></i>
+          dohyeyoon@jnu.ac.kr
+        </a>
+        <div class="tags">
+          <span class="tag">성인교육</span>
+          <span class="tag">노인교육</span>
+          <span class="tag">학습자분석</span>
+          <span class="tag">Adult Education</span>
+          <span class="tag">Gerontological Education</span>
+          <span class="tag">Learning Analytics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="section-inner">
+      <h2 class="section-title">연구업적</h2>
+      <div class="section-divider"></div>
+      <div class="research-grid">
+        <div class="research-card">
+          <div class="research-icon"><i class="fa-solid fa-person-cane"></i></div>
+          <h3>노인교육 (Gerontological Education)</h3>
+          <p>고령화 사회에서 노인 학습자의 교육 참여와 학습 경험에 관한 연구를 수행합니다.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>성인교육 (Adult Education)</h3>
+          <p>성인 학습자의 평생학습 참여 동기, 장벽, 학습 효과성에 관한 연구를 수행합니다.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>학습자분석 (Learning Analytics)</h3>
+          <p>데이터 기반 학습자 분석을 통해 교육 효과를 향상시키는 방법을 연구합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="section-inner">
+      <h2 class="section-title">학술업적</h2>
+      <div class="section-divider"></div>
+      <div class="pub-list">
+        <div class="pub-placeholder">
+          <i class="fa-solid fa-book-open" style="font-size:2rem; margin-bottom:12px; display:block;"></i>
+          논문 및 학술 발표 정보를 입력해주시면 여기에 표시됩니다.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <div class="section-inner">
+      <h2 class="section-title">이력</h2>
+      <div class="section-divider"></div>
+
+      <div class="cv-section">
+        <p class="cv-section-title"><i class="fa-solid fa-briefcase"></i> 경력</p>
+        <div class="cv-items">
+          <div class="cv-item">
+            <span class="cv-year">현재</span>
+            <div class="cv-content">
+              <h4>Research Fellow</h4>
+              <p>Institute of Educational Research, Chonnam National University</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <p class="cv-section-title"><i class="fa-solid fa-user-graduate"></i> 학력</p>
+        <div class="cv-items">
+          <div class="cv-item">
+            <span class="cv-year">-</span>
+            <div class="cv-content">
+              <h4>학력 정보를 입력해주세요</h4>
+              <p>학교명, 전공, 졸업연도</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Ihyeon Yoon · <a href="mailto:dohyeyoon@jnu.ac.kr">dohyeyoon@jnu.ac.kr</a></p>
+  </footer>
+
 </body>
 </html>
