@@ -35,7 +35,7 @@ const subCompetencies = [
   { id: 11, name: 'AI·디지털 의사소통 및 데이터 활용 역량', domain: 'application', items: [30,31,32] },
   { id: 12, name: '평가 데이터 해석 및 활용 역량', domain: 'application', items: [33,34,35] },
   { id: 13, name: '데이터 활용 피드백 역량', domain: 'application', items: [36,37,38] },
-  { id: 14, name: 'AI·디지털 활용을 위한 수업성찰 역량', domain: 'professional', items: [39,40,41] },
+  { id: 14, name: 'AI·디지털 관련 개인 정보 보호 역량', domain: 'professional', items: [39,40,41] },
   { id: 15, name: 'AI·디지털 관련 저작권 보호 역량', domain: 'professional', items: [42,43,44] },
 ];
 
